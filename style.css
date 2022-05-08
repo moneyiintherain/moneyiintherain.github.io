@@ -63,6 +63,7 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: .7s;
+    /* pointer-events: ; */
 }
 
 .play button:hover {

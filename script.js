@@ -1,6 +1,8 @@
 let newGame = document.querySelector('.newGame');
 let game = document.querySelector('.game');
 let timer = document.querySelector('.timer');
+let lose = document.querySelector('.lose');
+let loseButs = document.querySelectorAll('.loseBut');
 //let moneyHtml = document.querySelectorAll('.money');
 //const moneys = [500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000, 2000000, 3000000, 4000000, 5000000]
 //let sumOfMoney = 0;
@@ -298,6 +300,7 @@ function GAME(i) {
     // Time()
     // timer.classList.remove('timeEnd');
     // timer.classList.remove('timerAnim');
+    game.style.filter = 'blur(0)'
 
     function Time() {
         cl = setInterval(() => {
@@ -351,26 +354,13 @@ function GAME(i) {
 
     }
     let anwserDiv = undefined;
-    // let dNoneArr = document.querySelectorAll('.dNone')
+
     anwserDiv = document.querySelectorAll('.answer')
     let questDiv = document.querySelector('.question');
     let answer = document.querySelectorAll('.ansSpan');
     let rightAnswer = undefined;
     let rightAnswerDiv = undefined;
-
-    //    if (i != 0) {
-    //        moneyHtml[i - 1].style.color = 'white'
-    //    }
-    //    if (i == 0) {
-    //        for (let l = 0; l < 15; l++) {
-    //            dNoneArr[l].style.opacity = '0 '
-    //            moneyHtml[l].style.color = 'white'
-    //
-    //        }
-    //    }
-    //    dNoneArr[i].style.opacity = '1 '
-    //    moneyHtml[i].style.color = 'yellow'
-
+    game.style.pointerEvents = 'unset'
     anwserDiv[0].style.background = '#012B88';
     anwserDiv[0].style.color = 'white';
     anwserDiv[1].style.background = '#012B88';
@@ -379,11 +369,6 @@ function GAME(i) {
     anwserDiv[2].style.color = 'white';
     anwserDiv[3].style.background = '#012B88';
     anwserDiv[3].style.color = 'white';
-    // questDiv.innerHTML = '';
-    // answer[0].innerHTML = '';
-    // answer[1].innerHTML = '';
-    // answer[2].innerHTML = '';
-    // answer[3].innerHTML = '';
     answer[0].style.background = 'transparent';
     answer[1].style.background = 'transparent';
     answer[2].style.background = 'transparent';
@@ -480,11 +465,6 @@ function GAME(i) {
 
     rightAnswerDiv.onclick = () => {
         trueAnswerFunc(rightAnswerDiv)
-        //        sumOfMoney += moneys[i];
-
-        // clearInterval(cl)
-        // timer.innerHTML = '';
-        // timer.classList.add('timeEnd');
         falseAnswersDiv[0].style.pointerEvents = 'none';
         falseAnswersDiv[1].style.pointerEvents = 'none';
         falseAnswersDiv[2].style.pointerEvents = 'none';
@@ -528,11 +508,15 @@ function GAME(i) {
             rightAnswerDiv = undefined;
             // i = 0;
             // GAME(0)
-            if (i <= questions.length) {
-                // i = d;
-                i++
-                GAME(i)
-            }
+            // if (i <= questions.length) {
+            //     // i = d;
+            //     i++
+            //     GAME(i)
+            // }
+            lose.style.transform = 'scale(1)'
+            game.style.filter = 'blur(5px)'
+            game.style.pointerEvents = 'none'
+
         }, 5000);
         falseAnswersDiv = [];
         // helps[0].style.display = 'flex'
@@ -562,11 +546,14 @@ function GAME(i) {
             questAnsArr = undefined;
             //     i = 0;
             //     GAME(0)
-            if (i < questions.length) {
-                // i = d;
-                i++
-                GAME(i)
-            }
+            // if (i < questions.length) {
+            //     // i = d;
+            //     i++
+            //     GAME(i)
+            // }
+            lose.style.transform = 'scale(1)'
+            game.style.filter = 'blur(5px)'
+            game.style.pointerEvents = 'none'
         }, 5000);
         falseAnswersDiv = [];
         // helps[0].style.display = 'flex'
@@ -597,11 +584,14 @@ function GAME(i) {
             questAnsArr = undefined;
             //     i = 0;
             //     GAME(0)
-            if (i <= questions.length) {
-                // i = d;
-                i++
-                GAME(i)
-            }
+            // if (i <= questions.length) {
+            //     // i = d;
+            //     i++
+            //     GAME(i)
+            // }
+            lose.style.transform = 'scale(1)'
+            game.style.pointerEvents = 'none'
+            game.style.filter = 'blur(5px)'
         }, 5000);
         falseAnswersDiv = [];
         // helps[0].style.display = 'flex'
@@ -637,8 +627,11 @@ function GAME(i) {
                 //     GAME(0)
                 if (i <= questions.length && falseCount == 1) {
                     // i = d;
-                    i++
-                    GAME(i)
+                    // i++
+                    // GAME(i)
+                    lose.style.transform = 'scale(1)'
+                    game.style.pointerEvents = 'none'
+                    game.style.filter = 'blur(5px)'
                 }
                 else if (falseCount == 0) {
                     falseCount++;
@@ -669,8 +662,11 @@ function GAME(i) {
                 //     GAME(0)
                 if (i <= questions.length && falseCount == 1) {
                     // i = d;
-                    i++
-                    GAME(i)
+                    // i++
+                    // GAME(i)
+                    lose.style.transform = 'scale(1)'
+                    game.style.pointerEvents = 'none'
+                    game.style.filter = 'blur(5px)'
                 }
                 else {
                     falseCount++;
@@ -703,8 +699,11 @@ function GAME(i) {
                 //     GAME(0)
                 if (i <= questions.length && falseCount == 1) {
                     // i = d;
-                    i++
-                    GAME(i)
+                    // i++
+                    // GAME(i)
+                    lose.style.transform = 'scale(1)'
+                    game.style.pointerEvents = 'none'
+                    game.style.filter = 'blur(5px)'
                 }
                 else {
                     falseCount++;
@@ -752,4 +751,16 @@ newGame.onclick = function () {
 
 }
 
+loseButs[0].onclick = function () {
+    GAME(0)
+    arr = [0]
+    randHarc()
+    console.log(arr)
+    lose.style.transform = 'scale(0)'
+}
+loseButs[1].onclick = function () {
+    arr = [0]
+    game.style.top = '-100vh';
+    lose.style.transform = 'scale(0)'
 
+}
