@@ -204,7 +204,23 @@ const questions = [
 ];
 let helps = document.querySelectorAll('.helpItem')
 let falseAnswersDiv = []
+let arr = [0]
 
+function randHarc() {
+    if (arr.length == 20) {
+        return true
+    }
+    let num1 = Math.round(Math.random() * 18) + 1;
+    if (arr.includes(num1)) {
+        randHarc();
+    }
+    else {
+        arr.push(num1);
+        randHarc()
+    }
+
+}
+randHarc()
 function GAME(i) {
 
 
@@ -325,21 +341,21 @@ function GAME(i) {
         setTimeout(() => {
             win.style.transform = 'scale(1)'
 
-        }, 50000)
+        }, 3000)
         close.onclick = () => {
             win.style.transform = 'scale(0)'
         }
 
     }
 
-    if (questions[i] != undefined && !harcpox) {
-        questAnsArr = Object.keys(questions[i]);
+    if (questions[arr[i]] != undefined && !harcpox) {
+        questAnsArr = Object.keys(questions[arr[i]]);
     } else {
         questAnsArr = Object.keys(question2);
 
     }
     let anwserDiv = undefined;
-    let dNoneArr = document.querySelectorAll('.dNone')
+    // let dNoneArr = document.querySelectorAll('.dNone')
     anwserDiv = document.querySelectorAll('.answer')
     let questDiv = document.querySelector('.question');
     let answer = document.querySelectorAll('.ansSpan');
@@ -377,11 +393,11 @@ function GAME(i) {
     answer[2].style.background = 'transparent';
     answer[3].style.background = 'transparent';
     if (i != 25) {
-        questDiv.innerHTML = questions[i][questAnsArr[1]];
-        answer[0].innerHTML = questions[i][questAnsArr[2]];
-        answer[1].innerHTML = questions[i][questAnsArr[3]];
-        answer[2].innerHTML = questions[i][questAnsArr[4]];
-        answer[3].innerHTML = questions[i][questAnsArr[5]];
+        questDiv.innerHTML = questions[arr[i]][questAnsArr[1]];
+        answer[0].innerHTML = questions[arr[i]][questAnsArr[2]];
+        answer[1].innerHTML = questions[arr[i]][questAnsArr[3]];
+        answer[2].innerHTML = questions[arr[i]][questAnsArr[4]];
+        answer[3].innerHTML = questions[arr[i]][questAnsArr[5]];
     } else {
         questDiv.innerHTML = question2[questAnsArr[1]];
         answer[0].innerHTML = question2[questAnsArr[2]];
@@ -411,18 +427,18 @@ function GAME(i) {
     }
     // debugger;
     if (!harcpox) {
-        if (answer[0].innerHTML == questions[i][rightAnswer]) {
+        if (answer[0].innerHTML == questions[arr[i]][rightAnswer]) {
             rightAnswerDiv = anwserDiv[0]
         }
-        else if (answer[1].innerHTML == questions[i][rightAnswer]) {
+        else if (answer[1].innerHTML == questions[arr[i]][rightAnswer]) {
             rightAnswerDiv = anwserDiv[1]
 
         }
-        else if (answer[2].innerHTML == questions[i][rightAnswer]) {
+        else if (answer[2].innerHTML == questions[arr[i]][rightAnswer]) {
             rightAnswerDiv = anwserDiv[2]
 
         }
-        else if (answer[3].innerHTML == questions[i][rightAnswer]) {
+        else if (answer[3].innerHTML == questions[arr[i]][rightAnswer]) {
             rightAnswerDiv = anwserDiv[3]
 
         } if (Array.isArray(rightAnswerDiv)) {
@@ -734,21 +750,5 @@ function GAME(i) {
 
 GAME(0)
 
-let arr = [0]
 
-function randHarc() {
-    if (arr.length == 20) {
-        return true
-    }
-    let num1 = Math.round(Math.random() * 18) + 1;
-    if (arr.includes(num1)) {
-        randHarc();
-    }
-    else {
-        arr.push(num1);
-        randHarc()
-    }
-
-}
-randHarc()
 console.log(arr)
