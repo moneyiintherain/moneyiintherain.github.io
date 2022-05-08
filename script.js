@@ -206,13 +206,13 @@ const questions = [
 ];
 let helps = document.querySelectorAll('.helpItem')
 let falseAnswersDiv = []
-let arr = [0]
+let arr = []
 
 function randHarc() {
     if (arr.length == 20) {
         return true
     }
-    let num1 = Math.round(Math.random() * 18) + 1;
+    let num1 = Math.round(Math.random() * 19) ;
     if (arr.includes(num1)) {
         randHarc();
     }
@@ -745,8 +745,8 @@ function GAME(i) {
 newGame.onclick = function () {
     game.style.top = '0';
     // clock = 60;
-    GAME(0)
     randHarc()
+    GAME(arr[0])
     console.log(arr)
 
 }
