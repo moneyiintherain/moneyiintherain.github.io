@@ -220,7 +220,6 @@ function randHarc() {
     }
 
 }
-randHarc()
 function GAME(i) {
 
 
@@ -239,10 +238,7 @@ function GAME(i) {
     // }
 
     // let clock = 60
-    newGame.onclick = function () {
-        game.style.top = '0';
-        // clock = 60;
-    }
+
 
     falseAnswersDiv = []
     function falseAnswerFunc(ans) {
@@ -747,8 +743,13 @@ function GAME(i) {
         i = d
     }
 }
+newGame.onclick = function () {
+    game.style.top = '0';
+    // clock = 60;
+    GAME(0)
+    randHarc()
+    console.log(arr)
 
-GAME(0)
+}
 
 
-console.log(arr)
