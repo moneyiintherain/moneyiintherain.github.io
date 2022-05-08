@@ -752,14 +752,14 @@ newGame.onclick = function () {
 }
 
 loseButs[0].onclick = function () {
-    GAME(0)
-    arr = [0]
+    arr = []
     randHarc()
+    GAME(arr[0])
     console.log(arr)
     lose.style.transform = 'scale(0)'
 }
 loseButs[1].onclick = function () {
-    arr = [0]
+    arr = []
     game.style.top = '-100vh';
     lose.style.transform = 'scale(0)'
 
