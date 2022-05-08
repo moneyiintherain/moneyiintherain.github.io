@@ -597,8 +597,8 @@ function GAME(i) {
         // helps[2].style.display = 'flex'
 
     }
-    helps[3].addEventListener('click',()=>{
-        helps[3].style.display = 'none'
+    helps[2].addEventListener('click',()=>{
+        helps[2].style.display = 'none'
         let falseCount=0;
         falseAnswersDiv[0].onclick = () => {
             falseAnswerFunc(falseAnswersDiv[0])
@@ -701,16 +701,16 @@ function GAME(i) {
             // falseAnswersDiv = [];
         }
     })
-    helps[2].addEventListener('click', () => {
-        helps[2].style.display = 'none'
+    helps[1].addEventListener('click', () => {
+        helps[1].style.display = 'none'
         d = i;
         harcpox = true;
         GAME(25)
     })
 
-    helps[1].addEventListener('click', () => {
-        helps[1].style.display = 'none'
-    })
+    // helps[1].addEventListener('click', () => {
+    //     helps[1].style.display = 'none'
+    // })
     helps[0].addEventListener('click', () => {
         setTimeout(() => {
             fiftyAudio.play();
