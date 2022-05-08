@@ -480,7 +480,7 @@ function GAME(i) {
         setTimeout(() => {
             rightAnswer = undefined;
             rightAnswerDiv = undefined;
-            if (i <= questions.length ) {
+            if (i <= questions.length) {
                 i++
                 GAME(i)
                 // } if (i == questions.length) {
@@ -516,7 +516,7 @@ function GAME(i) {
             rightAnswerDiv = undefined;
             // i = 0;
             // GAME(0)
-            if (i <= questions.length ) {
+            if (i <= questions.length) {
                 // i = d;
                 i++
                 GAME(i)
@@ -550,7 +550,7 @@ function GAME(i) {
             questAnsArr = undefined;
             //     i = 0;
             //     GAME(0)
-            if (i < questions.length ) {
+            if (i < questions.length) {
                 // i = d;
                 i++
                 GAME(i)
@@ -585,7 +585,7 @@ function GAME(i) {
             questAnsArr = undefined;
             //     i = 0;
             //     GAME(0)
-            if (i <= questions.length ) {
+            if (i <= questions.length) {
                 // i = d;
                 i++
                 GAME(i)
@@ -597,9 +597,9 @@ function GAME(i) {
         // helps[2].style.display = 'flex'
 
     }
-    helps[2].addEventListener('click',()=>{
+    helps[2].addEventListener('click', () => {
         helps[2].style.display = 'none'
-        let falseCount=0;
+        let falseCount = 0;
         falseAnswersDiv[0].onclick = () => {
             falseAnswerFunc(falseAnswersDiv[0])
             // falseAnswersDiv[0].style.pointerEvents = 'none';
@@ -607,28 +607,28 @@ function GAME(i) {
             // falseAnswersDiv[2].style.pointerEvents = 'none';
             // rightAnswerDiv.style.pointerEvents = 'none';
             setTimeout(() => {
-                if (rightAnswerDiv != undefined && falseCount==1) {
+                if (rightAnswerDiv != undefined && falseCount == 1) {
                     rightAnswerDiv.style.backgroundColor = '#717A00'
                 }
-                
+
                 // clearInterval(cl)
                 // timer.innerHTML = '';
                 // timer.classList.add('timeEnd');
-    
+
             }, 3000);
-    
+
             setTimeout(() => {
                 // rightAnswer = undefined;
                 // rightAnswerDiv = undefined;
                 // questAnsArr = undefined;
                 //     i = 0;
                 //     GAME(0)
-                if (i <= questions.length && falseCount==1) {
+                if (i <= questions.length && falseCount == 1) {
                     // i = d;
                     i++
                     GAME(i)
                 }
-                else if(falseCount==0){
+                else if (falseCount == 0) {
                     falseCount++;
                 }
             }, 5000);
@@ -641,26 +641,26 @@ function GAME(i) {
             // falseAnswersDiv[2].style.pointerEvents = 'none';
             // rightAnswerDiv.style.pointerEvents = 'none';
             setTimeout(() => {
-                if (rightAnswerDiv != undefined && falseCount==1) {
+                if (rightAnswerDiv != undefined && falseCount == 1) {
                     rightAnswerDiv.style.backgroundColor = '#717A00'
                 }
-                
+
                 // clearInterval(cl)
                 // timer.innerHTML = '';
                 // timer.classList.add('timeEnd');
-    
+
             }, 3000);
-    
+
             setTimeout(() => {
-                
+
                 //     i = 0;
                 //     GAME(0)
-                if (i <= questions.length && falseCount==1) {
+                if (i <= questions.length && falseCount == 1) {
                     // i = d;
                     i++
                     GAME(i)
                 }
-                else{
+                else {
                     falseCount++;
                 }
             }, 5000);
@@ -673,28 +673,28 @@ function GAME(i) {
             // falseAnswersDiv[2].style.pointerEvents = 'none';
             // rightAnswerDiv.style.pointerEvents = 'none';
             setTimeout(() => {
-                if (rightAnswerDiv != undefined && falseCount==1) {
+                if (rightAnswerDiv != undefined && falseCount == 1) {
                     rightAnswerDiv.style.backgroundColor = '#717A00'
                 }
-                
+
                 // clearInterval(cl)
                 // timer.innerHTML = '';
                 // timer.classList.add('timeEnd');
-    
+
             }, 3000);
-    
+
             setTimeout(() => {
                 // rightAnswer = undefined;
                 // rightAnswerDiv = undefined;
                 // questAnsArr = undefined;
                 //     i = 0;
                 //     GAME(0)
-                if (i <= questions.length && falseCount==1) {
+                if (i <= questions.length && falseCount == 1) {
                     // i = d;
                     i++
                     GAME(i)
                 }
-                else{
+                else {
                     falseCount++;
                 }
             }, 5000);
@@ -728,8 +728,27 @@ function GAME(i) {
     // console.log(randNum2);
     if (harcpox) {
         harcpox = false
-        i=d
+        i = d
     }
 }
 
 GAME(0)
+
+let arr = [0]
+
+function randHarc() {
+    if (arr.length == 20) {
+        return true
+    }
+    let num1 = Math.round(Math.random() * 18) + 1;
+    if (arr.includes(num1)) {
+        randHarc();
+    }
+    else {
+        arr.push(num1);
+        randHarc()
+    }
+
+}
+randHarc()
+console.log(arr)
