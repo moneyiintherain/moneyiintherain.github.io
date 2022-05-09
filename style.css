@@ -446,14 +446,32 @@ body {
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2rem;
     transition: .5s linear;
 }
+/* .rulesAnim{
+    animation: rulesAnim 1s 1;
+                 
+}
+@keyframes rulesAnim {
+    0%{
+        display: none;
+        bottom: -100%;
 
+    }
+    1%{
+        display: flex;
+    }
+    100%{
+        display: flex;
+        bottom: 100%;
+    }
+    
+} */
 .rules span {
     text-align: center;
     font-size: 60px;

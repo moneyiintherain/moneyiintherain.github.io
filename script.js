@@ -14,7 +14,11 @@ let returnMenu = document.querySelector('.returnMenu');
 let spans = document.querySelectorAll('.spans');
 let d = 0;
 readRules.onclick = function () {
-    rules.style.bottom = "0";
+    rules.style.display='flex'
+    setTimeout(() => {
+        rules.style.bottom='0%'
+    }, 100);
+    // rules.classList.add('rulesAnim')
     spans.forEach(function (span) {
         span.classList.add('spanAnim')
     })
@@ -22,6 +26,10 @@ readRules.onclick = function () {
 
 returnMenu.onclick = function () {
     rules.style.bottom = "-100%";
+    setTimeout(() => {
+        rules.style.display='none'
+    }, 500);
+    rules.classList.remove('rulesAnim')
     spans.forEach(function (span) {
         span.classList.remove('spanAnim')
     })
