@@ -700,7 +700,7 @@ body {
 @media screen and (max-width:334px){
     .mainRules{
         height: 75vh;
-        font-size: 21px !important;
+        font-size: 18px !important;
     }
     .rules{
         gap:1rem;
