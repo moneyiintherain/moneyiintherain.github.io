@@ -760,6 +760,7 @@ newGame.onclick = function () {
 
 loseButs[0].onclick = function () {
     GAME(0)
+    helps.forEach(e => e.style.display='flex')
     arr = [0]
     randHarc()
     console.log(arr)
