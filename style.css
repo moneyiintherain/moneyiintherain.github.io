@@ -712,17 +712,17 @@ body {
 
 @media screen and (max-width:300px){
     .mainRules{
-        font-size: 18px !important;    
+        font-size: 16px !important;    
     }
 }
 
 
 @media screen and (max-width:656px){
     .rules>i{
-        top: 8px;
+        top: 25px;
     }
     .mainRules{
-        font-size: 20px;
+        font-size: 18px;
     }
     .rules span{
         font-size: 30px;
