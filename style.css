@@ -23,8 +23,8 @@ body {
     width: 100%;
     height: 100vh;
     background: url(img/background.jpg);
-    background-size: 200%;
-    background-position: top left;
+    background-size: 100%;
+    background-position: center center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.75);
@@ -34,6 +34,7 @@ body {
     animation: scanecoming 3s linear forwards 1;
 }
 
+/*
 @keyframes scanecoming {
     to {
         background-size: 100%;
@@ -41,6 +42,7 @@ body {
     }
 
 }
+*/
 
 .play {
     height: auto;
@@ -125,6 +127,7 @@ body {
     color: white;
     font-size: 16px;
     z-index: 2;
+    padding: 0 45px;
 }
 
 .questionLeft {
@@ -175,6 +178,24 @@ body {
     left: 50%;
     background: #012B88;
     transform: translateX(-50%);
+}
+
+.asnwerMediaLeft{
+    position: absolute;
+    width: 33%;
+    height: 3px;
+    left: 0;
+    background: #012B88;
+    display: none
+}
+
+.asnwerMediaRight{
+    position: absolute;
+    width: 33%;
+    height: 3px;
+    right: 0;
+    background: #012B88;   
+    display: none;
 }
 
 .answer {
@@ -535,4 +556,157 @@ body {
 .loseButsDiv button:hover {
     box-shadow: 0 0 0 10px inset #012B88;
     color: black;
+}
+
+@media screen and (max-width:1042px){
+    .scane{
+        background-size: 200%;
+        background-position: center center;
+    }
+    .questions{
+        height: 70vh;
+    }
+    .help{
+        flex-direction: row;
+        width: 200px;
+    }
+    .question{
+        width: 90%;
+    }
+    .answer{
+        width: 28%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .questions{
+        height: 85vh;
+        padding: 0;
+    }
+    .answerRow{
+        flex-direction: column;
+        height: 150px;
+        gap:20px;
+    }
+    .answer{
+        width: 70%;
+        height: 35% !important;
+    }
+    .asnwerLeft{
+        top: 20%;
+    }
+    .asnwerRight{
+        top: 20%;
+    }
+    .asnwerMiddle{
+        display: none;
+    }
+    .asnwerMediaLeft{
+        display: block;
+        bottom: 20%;
+    }
+    .asnwerMediaRight{
+        display: block;
+        bottom: 20%;
+    }
+    
+}
+
+@media screen and (max-width:820px){
+    .rules span{
+        font-size:50px !important;
+    }
+    .mainRules{
+        width: 80%;
+        height: 60vh;
+        font-size: 23px !important;
+    }
+    .scane{
+        background-size: 300% !important;
+    }
+}
+
+@media screen and (max-width:526px){
+    .scane{
+        background-size: 500% !important;
+    }
+    .mainRules{
+        gap:6px !important;
+    }
+    .rules span{
+        font-size:40px !important;
+    }
+}
+
+@media screen and (max-width:400px){
+    .answer{
+        height: 38% !important;
+    }
+    .question{
+        height: 100% !important;
+        font-size: 13.5px;
+    }
+}
+
+@media screen and (max-width:1412px){
+    .scane{
+        background-size: 200%;
+    }
+    .mainRules{
+        width: 80%;
+        height: 65vh;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:412px){
+    .mainRules{
+        width: 90%;
+        height: 70vh;
+    }
+    .rules span{
+        font-size:30px !important;
+    }
+}
+
+@media screen and (max-width:350px){
+    .mainRules{
+        width: 90%;
+        height: 70vh;
+    }
+    .rules span{
+        font-size:24px !important;
+    }
+}
+
+@media screen and (max-width:334px){
+    .mainRules{
+        height: 75vh;
+        font-size: 21px !important;
+    }
+    .rules{
+        gap:1rem;
+    }
+    .rules span{
+        font-size:20.8px !important;
+    }
+}
+
+@media screen and (max-width:300px){
+    .mainRules{
+        font-size: 18px !important;    
+    }
+}
+
+
+@media screen and (max-width:656px){
+    .rules>i{
+        top: 8px;
+    }
+    .mainRules{
+        font-size: 20px;
+    }
+    .rules span{
+        font-size: 30px;
+    }
 }
