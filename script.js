@@ -14,9 +14,9 @@ let returnMenu = document.querySelector('.returnMenu');
 let spans = document.querySelectorAll('.spans');
 let d = 0;
 readRules.onclick = function () {
-    rules.style.display='flex'
+    rules.style.display = 'flex'
     setTimeout(() => {
-        rules.style.bottom='0%'
+        rules.style.bottom = '0%'
     }, 100);
     // rules.classList.add('rulesAnim')
     spans.forEach(function (span) {
@@ -27,7 +27,7 @@ readRules.onclick = function () {
 returnMenu.onclick = function () {
     rules.style.bottom = "-100%";
     setTimeout(() => {
-        rules.style.display='none'
+        rules.style.display = 'none'
     }, 500);
     rules.classList.remove('rulesAnim')
     spans.forEach(function (span) {
@@ -219,7 +219,7 @@ function randHarc() {
     if (arr.length == 20) {
         return true
     }
-    let num1 = Math.round(Math.random() * 19) ;
+    let num1 = Math.round(Math.random() * 19);
     if (arr.includes(num1)) {
         randHarc();
     }
@@ -749,8 +749,13 @@ function GAME(i) {
         i = d
     }
 }
+game.style.display = 'none';
 newGame.onclick = function () {
-    game.style.top = '0';
+    game.style.display = 'block';
+    setTimeout(() => {
+        game.style.top = '0';
+
+    }, 100);
     // clock = 60;
     randHarc()
     GAME(arr[0])
@@ -760,7 +765,7 @@ newGame.onclick = function () {
 
 loseButs[0].onclick = function () {
     GAME(0)
-    helps.forEach(e => e.style.display='flex')
+    helps.forEach(e => e.style.display = 'flex')
     arr = [0]
     randHarc()
     console.log(arr)
@@ -769,6 +774,10 @@ loseButs[0].onclick = function () {
 loseButs[1].onclick = function () {
     arr = [0]
     game.style.top = '-100vh';
+    setTimeout(() => {
+        game.style.display = 'none';
+
+    }, 500);
     lose.style.transform = 'scale(0)'
 
 }
