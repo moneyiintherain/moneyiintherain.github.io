@@ -627,7 +627,9 @@ body {
         display: block;
         bottom: 20%;
     }
-    
+    .rules>i{
+        top: 40px !important;
+    }
 }
 
 @media screen and (max-width:820px){
@@ -660,6 +662,9 @@ body {
     .rules span{
         font-size:40px !important;
     }
+    .rules>i{
+        top: 40px !important;
+    }
 }
 
 @media screen and (max-width:400px){
@@ -669,6 +674,9 @@ body {
     .question{
         height: 100% !important;
         font-size: 13.5px;
+    }
+    .rules>i{
+        top: 40px !important;
     }
 }
 
@@ -692,6 +700,9 @@ body {
     .rules span{
         font-size:30px !important;
     }
+    .rules>i{
+        top: 40px !important;
+    }
 }
 
 @media screen and (max-width:350px){
@@ -702,6 +713,9 @@ body {
     }
     .rules span{
         font-size:24px !important;
+    }
+    .rules>i{
+        top: 40px !important;
     }
 }
 
@@ -716,11 +730,17 @@ body {
     .rules span{
         font-size:19px !important;
     }
+    .rules>i{
+        top: 40px !important;
+    }
 }
 
 @media screen and (max-width:300px){
     .mainRules{
         font-size: 16px !important;    
+    }
+    .rules>i{
+        top: 40px !important;
     }
 }
 
