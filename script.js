@@ -776,7 +776,6 @@ loseButs[1].onclick = function () {
     game.style.top = '-100vh';
     setTimeout(() => {
         game.style.display = 'none';
-
     }, 500);
     lose.style.transform = 'scale(0)'
 
